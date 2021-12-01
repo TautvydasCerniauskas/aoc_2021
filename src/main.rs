@@ -6,7 +6,7 @@ mod solutions;
 use benchmark::benchmarked_main;
 use read_file::read_all;
 
-use solutions::{day1_sol1, day1_sol2};
+use solutions::day1::{day1_sol1, day1_sol2};
 
 fn main() {
     let args: Vec<String> = env::args().collect();
