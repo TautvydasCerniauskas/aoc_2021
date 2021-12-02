@@ -1,4 +1,8 @@
-use std::{fmt::{Debug, Display}, fs, io::{stdin, Read}, time::{Duration, Instant}};
+use std::{
+    fmt::{Debug, Display},
+    io::{stdin, Read},
+    time::{Duration, Instant},
+};
 
 pub fn benchmark<F>(iterations: usize, f: F) -> Duration
 where
@@ -53,7 +57,6 @@ pub fn benchmarked_main<Intermediate, Solution, Parser, Solver>(
     Solver: Fn(&Intermediate) -> Option<Solution>,
     Solution: Debug + Display + PartialEq,
 {
-    fs::read_to_string(&input).unwrap();
     let solution = solve(&input, &parse, &solve_already_parsed).unwrap();
     if !disable_logging {
         println!("Solution: {}", solution);
